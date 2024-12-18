@@ -1,0 +1,20 @@
+{
+  "name": "random-password-cli",
+  "version": "0.0.1",
+  "description": "A random generator password CLI",
+  "main": "index.js",
+  "scripts": {
+    "script": "node index.js"
+  },
+  "keywords": [
+    "cli",
+    "password",
+    "generate",
+    "random"
+  ],
+  "author": "Gabriel Wolf",
+  "license": "ISC",
+  "dependencies": {
+    "enquirer": "^2.4.1"
+  }
+}

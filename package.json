@@ -4,7 +4,8 @@
   "description": "A random generator password CLI",
   "main": "index.js",
   "scripts": {
-    "script": "node index.js"
+    "script": "node index.js pt-BR",
+    "script-en": "node index.js en-US"
   },
   "keywords": [
     "cli",

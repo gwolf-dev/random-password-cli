@@ -13,6 +13,9 @@ module.exports = {
     upperCaseSelect: 'Letra maiúscula',
     symbolsSelect: 'Símbolos',
     invalidOptionsSelect: 'Por favor, selecione uma das opções:',
+    successPasswords: 'Senhas geradas com sucesso!',
+    tableStyle: 'Formato de tabela:',
+    listStyle: 'Formato em lista:',
   },
   'en-US': {
     welcome:
@@ -28,5 +31,8 @@ module.exports = {
     upperCaseSelect: 'Upper case letter',
     symbolsSelect: 'Symbols',
     invalidOptionsSelect: 'Please select one of the options:',
+    successPasswords: 'Passwords generated successfully!',
+    tableStyle: 'Table format:',
+    listStyle: 'List style',
   },
 };

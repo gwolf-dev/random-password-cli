@@ -5,6 +5,12 @@ const translationCLI = require('./language');
 const generatePassword = require('./utils/generatePassword');
 
 const translation = translationCLI();
+const charTypesParams = {
+  number: 'number',
+  charUpperCase: 'charUpperCase',
+  charLowerCase: 'charLowerCase',
+  symbol: 'symbol',
+};
 
 console.log(color.blue(`----- ${translation.welcome} ----- \n`));
 
@@ -30,10 +36,16 @@ console.log(color.blue(`----- ${translation.welcome} ----- \n`));
         name: 'charTypes',
         message: translation.charTypes,
         choices: [
-          { message: translation.numberSelect, value: 'number' },
-          { message: translation.lowerCaseSelect, value: 'charUpperCase' },
-          { message: translation.upperCaseSelect, value: 'charLowerCase' },
-          { message: translation.symbolsSelect, value: 'symbol' },
+          { message: translation.numberSelect, value: charTypesParams.number },
+          {
+            message: translation.lowerCaseSelect,
+            value: charTypesParams.charUpperCase,
+          },
+          {
+            message: translation.upperCaseSelect,
+            value: charTypesParams.charLowerCase,
+          },
+          { message: translation.symbolsSelect, value: charTypesParams.symbol },
         ],
         validate: (value) => {
           if (value.length === 0) {
@@ -46,12 +58,21 @@ console.log(color.blue(`----- ${translation.welcome} ----- \n`));
       },
     ];
     const answers = await prompt(questions);
-    const passwordGenerated = generatePassword({
-      ...answers,
-      answerCharsLength,
-    });
+    const passwordGenerated = generatePassword(
+      {
+        ...answers,
+        charsLength: answerCharsLength,
+      },
+      charTypesParams,
+    );
 
-    console.log(passwordGenerated);
+    console.log(color.green(translation.successPasswords));
+    console.log('--------------------');
+    console.log(translation.tableStyle);
+    console.table(passwordGenerated);
+    console.log('--------------------');
+    console.log(translation.listStyle);
+    passwordGenerated.forEach((password) => console.log(`*  ${password}`));
   } catch (error) {
     console.error(color.red(error.message));
     throw new Error(error);

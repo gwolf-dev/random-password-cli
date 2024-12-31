@@ -19,10 +19,6 @@ Inglês: `npm run script-en`
 - Letras minúsculas
 - E os demais símbolos/caracteres especiais
 
-> ### Atenção!
->
-> Ainda será implementado a quantidade de vezes que um dos tipos de caracteres vai ser repetido durante a senha.
-
 No final é gerado a senha no formato de tabela e em lista para ser copiado e utilizado, é algo bem simples mas muito usual no dia a dia.
 
 ## Bibliotecas utilizadas em conjunto com o Node.js:
